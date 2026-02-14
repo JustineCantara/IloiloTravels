@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resorts Listing | Iloilo Travel Guide</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    line-height: 1.6;
+    color: #333;
+}
+
+/* ================= HEADER ================= */
+header {
+    background: rgba(0, 77, 64, 0.95);
+    padding: 15px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    color: white;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+nav a {
+    color: white;
+    margin-left: 25px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ffcc80;
+}
+
+/* ================= SECTIONS ================= */
+.section {
+    padding: 90px 60px;
+    text-align: center;
+}
+
+.section h3 {
+    font-size: 36px;
+    margin-bottom: 50px;
+    color: #004d40;
+}
+
+.page-header {
+    background-image: linear-gradient(rgba(0, 77, 64, 0.7), rgba(0, 77, 64, 0.7)), url('https://images.unsplash.com/photo-1506157786151-b8491531f063?w=1200&h=400');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 80px 60px;
+}
+
+.page-header h2 {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.page-header p {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.search-section {
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.search-section input {
+    padding: 12px 20px;
+    width: 300px;
+    max-width: 90%;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+/* ================= CARDS ================= */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 60px;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    color: #004d40;
+}
+
+.card p {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+/* Button */
+.btn {
+    display: inline-block;
+    padding: 8px 15px;
+    background: #004d40;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #00695c;
+    color: #ffcc80;
+}
+
+/* ================= FOOTER ================= */
+footer {
+    background: #004d40;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+footer p {
+    margin-top: 10px;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 15px 20px;
+    }
+
+    nav {
+        margin-top: 10px;
+    }
+
+    .page-header h2 {
+        font-size: 28px;
+    }
+
+    .section {
+        padding: 60px 20px;
+    }
+
+    .cards {
+        padding: 20px;
+    }
+}
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Iloilo Tourism</h1>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="districts.html">Districts</a>
+            <a href="resorts_listing.html">Resorts</a>
+            <a href="restaurant_directory.html">Restaurants</a>
+            <a href="food_delicacies.html">Iloilo Foods</a>
+            <a href="travel_guide.html">Travel Guide</a>
+        </nav>
+    </header>
+
+    <!-- Page Title -->
+    <section class="page-header">
+        <h2>Top Resorts in Iloilo</h2>
+        <p>Discover relaxing beach resorts and getaway destinations.</p>
+    </section>
+
+    <!-- Resorts Grid -->
+    <section class="search-section">
+        <input
+            type="text"
+            id="searchInputResorts"
+            placeholder="Search resort name or description..."
+            onkeyup="filterCards(this, 'card')"
+        />
+    </section>
+
+    <section class="section" style="background: #f4f4f4;">
+    <h3>Featured Resorts</h3>
+    <div class="cards">
+
+            <!-- Resort Card 1 -->
+            <div class="card">
+                <img src="solymar.jpg" alt="Resort 1">
+                <div class="card-content">
+                    <h3>Sol Y Mar Beach Resort</h3>
+                    <p>Located in Guimaras, perfect for weekend beach escape.</p>
+                    <a href="#" class="btn">View Details</a>
+                </div>
+            </div>
+
+            <!-- Resort Card 2 -->
+            <div class="card">
+                <img src="shamrock.jpg" alt="Resort 2">
+                <div class="card-content">
+                    <h3>Shamrock Beach Resort</h3>
+                    <p>Enjoy crystal clear waters and relaxing beachfront views.</p>
+                    <a href="#" class="btn">View Details</a>
+                </div>
+            </div>
+
+            <!-- Resort Card 3 -->
+            <div class="card">
+                <img src="racsos.jpg" alt="Resort 3">
+                <div class="card-content">
+                    <h3>Racso's Woodland Resort</h3>
+                    <p>It is a theme park for nature lovers.</p>
+                    <a href="#" class="btn">View Details</a>
+                </div>
+            </div>
+
+            <!-- Resort Card 4 -->
+            <div class="card">
+                <img src="seagarden.jpg" alt="Resort 4">
+                <div class="card-content">
+                    <h3>Sea Garden Resort</h3>
+                    <p>A charming retreat located in Leganes, Iloilo, Philippines.</p>
+                    <a href="#" class="btn">View Details</a>
+                </div>
+            </div>
+
+    </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <h3>Iloilo Tourism</h3>
+        <p>Promoting the beauty, culture, and heritage of Iloilo Province</p>
+        <p>&copy; 2026 Iloilo Travel Guide. All Rights Reserved.</p>
+    </footer>
+
+<script>
+function filterCards(inputElem, cardClass) {
+    const filter = inputElem.value.toLowerCase();
+    const cards = document.getElementsByClassName(cardClass);
+    Array.from(cards).forEach(card => {
+        const text = card.textContent.toLowerCase();
+        card.style.display = text.indexOf(filter) > -1 ? '' : 'none';
+    });
+}
+</script>
+
+</body>
+</html>

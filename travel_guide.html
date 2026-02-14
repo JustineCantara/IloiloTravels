@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Guide | Iloilo Travel Guide</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    line-height: 1.6;
+    color: #333;
+}
+
+/* ================= HEADER ================= */
+header {
+    background: rgba(0, 77, 64, 0.95);
+    padding: 15px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    color: white;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+nav a {
+    color: white;
+    margin-left: 25px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ffcc80;
+}
+
+/* ================= SECTIONS ================= */
+.section {
+    padding: 90px 60px;
+    text-align: center;
+}
+
+.section h3 {
+    font-size: 36px;
+    margin-bottom: 50px;
+    color: #004d40;
+}
+
+.page-header {
+    background: linear-gradient(rgba(0, 77, 64, 0.7), rgba(0, 77, 64, 0.7)), url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200') center/cover;
+    color: white;
+    text-align: center;
+    padding: 80px 60px;
+}
+
+.page-header h2 {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.page-header p {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.travel-section {
+    padding: 60px;
+}
+
+.travel-card {
+    background: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.travel-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.travel-card h3 {
+    margin-bottom: 15px;
+    color: #004d40;
+}
+
+.travel-card ul {
+    padding-left: 20px;
+    text-align: left;
+}
+
+.travel-card li {
+    margin-bottom: 8px;
+}
+
+.search-section {
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.search-section input {
+    padding: 12px 20px;
+    width: 300px;
+    max-width: 90%;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+/* ================= FOOTER ================= */
+footer {
+    background: #004d40;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+footer p {
+    margin-top: 10px;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 15px 20px;
+    }
+
+    nav {
+        margin-top: 10px;
+    }
+
+    .page-header h2 {
+        font-size: 28px;
+    }
+
+    .section {
+        padding: 60px 20px;
+    }
+
+    .travel-section {
+        padding: 20px;
+    }
+}
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Iloilo Tourism</h1>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="districts.html">Districts</a>
+            <a href="resorts_listing.html">Resorts</a>
+            <a href="restaurant_directory.html">Restaurants</a>
+            <a href="food_delicacies.html">Iloilo Foods</a>
+            <a href="travel_guide.html">Travel Guide</a>
+        </nav>
+    </header>
+
+    <!-- Page Title -->
+    <section class="page-header">
+        <h2>Iloilo Travel Guide</h2>
+        <p>Your essential guide before visiting Iloilo.</p>
+    </section>
+
+    <!-- Travel Information Section -->
+    <section class="search-section">
+        <input
+            type="text"
+            id="searchInputTravel"
+            placeholder="Search topic or keyword..."
+            onkeyup="filterCards(this, 'travel-card')"
+        />
+    </section>
+
+    <section class="section" style="background: #f4f4f4;">
+    <h3>Travel Tips & Information</h3>
+
+            <div class="travel-card">
+                <h3> How to Get to Iloilo</h3>
+                <p>
+                    You can reach Iloilo by air through Iloilo International Airport.
+                    Direct flights are available from Manila, Cebu, and other major cities.
+                    You may also travel by ferry from nearby provinces.
+                </p>
+            </div>
+
+            <div class="travel-card">
+                <h3>Best Time to Visit</h3>
+                <p>
+                    The best time to visit Iloilo is during the dry season (December to May).
+                    January is especially popular because of the Dinagyang Festival.
+                </p>
+            </div>
+
+            <div class="travel-card">
+                <h3> Getting Around</h3>
+                <p>
+                    Transportation options include jeepneys, taxis, tricycles, and ride-hailing apps.
+                    Renting a car is recommended for visiting resorts and nearby provinces like Guimaras.
+                </p>
+            </div>
+
+            <div class="travel-card">
+                <h3> Travel Tips</h3>
+                <ul>
+                    <li>Bring sunscreen and light clothing.</li>
+                    <li>Carry small bills for public transport.</li>
+                    <li>Respect local customs and traditions.</li>
+                    <li>Try local food like Batchoy and Pancit Molo.</li>
+                </ul>
+            </div>
+
+            <div class="travel-card">
+                <h3> Must-Experience Events</h3>
+                <p>
+                    Don’t miss the Dinagyang Festival in January —
+                    one of the most colorful and energetic festivals in the Philippines.
+                </p>
+            </div>
+
+    </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <h3>Iloilo Tourism</h3>
+        <p>Promoting the beauty, culture, and heritage of Iloilo Province</p>
+        <p>&copy; 2026 Iloilo Travel Guide. All Rights Reserved.</p>
+    </footer>
+
+<script>
+function filterCards(inputElem, cardClass) {
+    const filter = inputElem.value.toLowerCase();
+    const cards = document.getElementsByClassName(cardClass);
+    Array.from(cards).forEach(card => {
+        const text = card.textContent.toLowerCase();
+        card.style.display = text.indexOf(filter) > -1 ? '' : 'none';
+    });
+}
+</script>
+
+</body>
+</html>

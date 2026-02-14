@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Region VI Restaurants Directory</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    line-height: 1.6;
+    color: #333;
+}
+
+/* ================= HEADER ================= */
+header {
+    background: rgba(0, 77, 64, 0.95);
+    padding: 15px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    color: white;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+nav a {
+    color: white;
+    margin-left: 25px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ffcc80;
+}
+
+/* ================= SECTIONS ================= */
+.section {
+    padding: 90px 60px;
+    text-align: center;
+}
+
+.section h3 {
+    font-size: 36px;
+    margin-bottom: 50px;
+    color: #004d40;
+}
+
+.page-header {
+    background-image: linear-gradient(rgba(0, 77, 64, 0.7), rgba(0, 77, 64, 0.7)), url('https://tse3.mm.bing.net/th/id/OIP.JvZ3iZy5BoMVODEcrFJQTgHaEo?cb=defcachec2&rs=1&pid=ImgDetMain&o=7&rm=3');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 80px 60px;
+}
+
+.page-header h2 {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.page-header p {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.search-section {
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.search-section input {
+    padding: 12px 20px;
+    width: 300px;
+    max-width: 90%;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+/* ================= CARDS ================= */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 60px;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card h2 {
+    color: #004d40;
+    padding: 15px 20px 5px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    padding: 0 20px 5px;
+    font-size: 14px;
+}
+
+.card p:last-child {
+    padding-bottom: 20px;
+}
+
+/* ================= FOOTER ================= */
+footer {
+    background: #004d40;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+footer p {
+    margin-top: 10px;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 15px 20px;
+    }
+
+    nav {
+        margin-top: 10px;
+    }
+
+    .page-header h2 {
+        font-size: 28px;
+    }
+
+    .section {
+        padding: 60px 20px;
+    }
+
+    .cards {
+        padding: 20px;
+    }
+}
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Iloilo Tourism</h1>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="districts.html">Districts</a>
+            <a href="resorts_listing.html">Resorts</a>
+            <a href="restaurant_directory.html">Restaurants</a>
+            <a href="food_delicacies.html">Iloilo Foods</a>
+            <a href="travel_guide.html">Travel Guide</a>
+        </nav>
+    </header>
+
+<section class="page-header">
+    <h2>Restaurants Directory</h2>
+    <p>Region VI - Western Visayas, Philippines</p>
+</section>
+
+<section class="search-section">
+    <input 
+        type="text" 
+        id="searchInputRestaurant" 
+        placeholder="Search restaurant name, location, or specialty..."
+        onkeyup="filterCards(this, 'card')"
+    >
+</section>
+
+<section class="section" style="background: #f4f4f4;">
+<h3>Featured Restaurants</h3>
+<div class="cards" id="restaurantList">
+
+
+
+
+    <div class="card">
+        <img src="breakthrough.webp">
+        <h2>Breakthrough Restaurant</h2>
+        <p>Location: Iloilo City</p>
+        <p>Specialty: Seafood</p>
+        <p>Contact: 0912-345-6789</p>
+    </div>
+
+    <div class="card">
+        <img src="tatyos.webp" alt="Tatoy's Manokan">
+        <h2>Tatoy's Manokan</h2>
+        <p>Location: Iloilo City</p>
+        <p>Specialty: Native Chicken</p>
+        <p>Contact: 0911-222-3333</p>
+    </div>
+
+    <div class="card">
+        <img src="pechopack.webp" alt="Chicken House">
+        <h2>Chicken House</h2>
+        <p>Location: Iloilo City</p>
+        <p>Specialty: Chicken Inasal</p>
+        <p>Contact: 0913-444-5555</p>
+    </div>
+
+    <div class="card">
+        <img src="vikings.jpg" alt="Café Terraza">
+        <h2>Vikings Luxury Buffet</h2>
+        <p>Location: SM City, Iloilo</p>
+        <p>Specialty: Luxury Foods</p>
+        <p>Contact: 0914-666-7777</p>
+    </div>
+
+    <div class="card">  
+        <img src="aquarium.webp" alt="Jade Court Restaurant">
+        <h2>Aquarium Cafe</h2>
+        <p>Location: Iloilo City</p>
+        <p>Specialty: SeaFoods</p>
+        <p>Contact: 0915-888-9999</p>
+    </div>
+
+    <div class="card">
+        <img src="ramboys.webp" alt="Sea Breeze Café">
+        <h2>Ramboys</h2>
+        <p>Location: Iloilo City</p>
+        <p>Specialty: Lechon Kawali</p>
+        <p>Contact: 0917-000-1111</p>
+    </div>
+   
+    <div class="card">
+        <img src="mangotree.webp" alt="Sea Breeze Café">
+        <h2>The Mango Tree Restaurant</h2>
+        <p>Location: Iloilo City</p>
+        <p>Specialty: Soup</p>
+        <p>Contact: 0917-000-1111</p>
+    </div>
+
+       <div class="card">
+        <img src="bigbys.webp" alt="Sea Breeze Café">
+        <h2>Bigby's</h2>
+        <p>Location: Festive Walk, Iloilo</p>
+        <p>Specialty: BackRibs</p>
+        <p>Contact: 0917-000-1111</p>
+    </div>
+
+
+
+
+
+    
+</div>
+</section>
+
+<footer>
+    <h3>Iloilo Tourism</h3>
+    <p>Promoting the beauty, culture, and heritage of Iloilo Province</p>
+    <p>© 2026 Iloilo Travel Guide. All Rights Reserved.</p>
+</footer>
+
+<script>
+function filterCards(inputElem, cardClass) {
+    const filter = inputElem.value.toLowerCase();
+    const cards = document.getElementsByClassName(cardClass);
+    Array.from(cards).forEach(card => {
+        const text = card.textContent.toLowerCase();
+        card.style.display = text.indexOf(filter) > -1 ? '' : 'none';
+    });
+}
+</script>
+
+</body>
+</html>

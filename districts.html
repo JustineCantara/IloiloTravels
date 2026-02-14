@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Iloilo Province Districts</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    line-height: 1.6;
+    color: #333;
+}
+
+/* ================= HEADER ================= */
+header {
+    background: rgba(0, 77, 64, 0.95);
+    padding: 15px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    color: white;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+nav a {
+    color: white;
+    margin-left: 25px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ffcc80;
+}
+
+/* ================= SECTIONS ================= */
+.section {
+    padding: 90px 60px;
+    text-align: center;
+}
+
+.section h3 {
+    font-size: 36px;
+    margin-bottom: 50px;
+    color: #004d40;
+}
+
+.page-header {
+    background: linear-gradient(rgba(0, 77, 64, 0.7), rgba(0, 77, 64, 0.7)), url('https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1200') center/cover;
+    color: white;
+    text-align: center;
+    padding: 80px 60px;
+}
+
+.page-header h2 {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.page-header p {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.search-container {
+    text-align: center;
+    margin: 30px 20px;
+}
+
+.search-container input {
+    padding: 12px 20px;
+    width: 300px;
+    max-width: 90%;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+/* ================= CARDS ================= */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 0.3s;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+    margin-bottom: 15px;
+    color: #004d40;
+}
+
+.card ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.card ul li {
+    padding: 6px 0;
+    border-radius: 4px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.card ul li.highlight {
+    background: #ffcc80;
+    font-weight: 600;
+}
+
+/* ================= FOOTER ================= */
+footer {
+    background: #004d40;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+footer p {
+    margin-top: 10px;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 12px;
+    max-width: 600px;
+    width: 90%;
+    padding: 20px;
+    position: relative;
+    text-align: center;
+}
+
+.modal-content img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.modal-content h3 {
+    color: #004d40;
+    margin-bottom: 10px;
+}
+
+.modal-content p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #004d40;
+}
+
+.close-btn:hover {
+    color: #ff9800;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 15px 20px;
+    }
+
+    nav {
+        margin-top: 10px;
+    }
+
+    .page-header h2 {
+        font-size: 28px;
+    }
+
+    .section {
+        padding: 60px 20px;
+    }
+
+    .cards {
+        padding: 20px 20px 50px;
+    }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Iloilo Tourism</h1>
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="districts.html">Districts</a>
+        <a href="resorts_listing.html">Resorts</a>
+        <a href="restaurant_directory.html">Restaurants</a>
+        <a href="food_delicacies.html">Iloilo Foods</a>
+        <a href="travel_guide.html">Travel Guide</a>
+    </nav>
+</header>
+
+<section class="page-header">
+    <h2>Iloilo Province Districts</h2>
+    <p>Click a municipality to view its hometown plaza!</p>
+</section>
+
+<div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search for a municipality...">
+</div>
+
+<section class="section" style="background: #f4f4f4;">
+<h3>Districts</h3>
+<div class="cards" id="districtCards">
+
+    <!-- 1st District: 1st District of Iloilo -->
+    <div class="card">
+        <img src="first.png" alt="1st District">
+        <div class="card-content">
+            <h3>1st District</h3>
+            <ul>
+            <li data-img="https://i.ytimg.com/vi/U-NAOM_BY2A/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AHUBoAC4AOKAgwIABABGEkgXShlMA8=&rs=AOn4CLBny405VPFotUJXCkn3xbJsXSNtOA" data-desc="Igbaras Plaza, central town square.">Igbaras</li>
+            <li data-img="https://i.ytimg.com/vi/4564NxEODj4/maxresdefault.jpg" data-desc="Guimbal Plaza, historic town center.">Guimbal</li>
+            <li data-img="https://tse3.mm.bing.net/th/id/OIP.p53U9DCFTUuIgL2kljsQAQHaE6?rs=1&pid=ImgDetMain&o=7&rm=3" data-desc="Miag-ao Plaza, near the famous Miag-ao Church.">Miag-ao</li>
+            <li data-img="https://i.ytimg.com/vi/p9uLuJci8xE/maxresdefault.jpg" data-desc="Oton Plaza, heart of the municipality.">Oton</li>
+            <li data-img="https://kapampangantraveller.com/wp-content/uploads/2024/10/img_2328-1.jpg" data-desc="San Joaquin Plaza, central town square.">San Joaquin</li>
+            <li data-img="https://4.bp.blogspot.com/-16Nvop7rdmc/Wf7226sb0HI/AAAAAAAAABE/OXYigNVZjFoLjMzPETONAKn0FIYLPsVFwCLcBGAs/s1600/IMG_2564.jpg" data-desc="Tigbauan Plaza, historic and lively town center.">Tigbauan</li>
+            <li data-img="https://i.ytimg.com/vi/gaKhgvqBSno/maxresdefault.jpg" data-desc="Tubungan Plaza, scenic town plaza.">Tubungan</li>
+        </ul>
+        </div>
+    </div>
+
+    <!-- 2nd District -->
+    <div class="card">
+        <img src="second.png" alt="2nd District">
+        <div class="card-content">
+            <h3>2nd District</h3>
+             <ul>
+            <li data-img="https://i.ytimg.com/vi/FafyLI1126M/maxresdefault.jpg" data-desc="Alimodian Plaza, historic town center.">Alimodian</li>
+            <li data-img="https://2.bp.blogspot.com/-6nqIa0vafdQ/UPLTcx49NeI/AAAAAAAACDc/YWs4ZVduhp4/s1600/leganes+church+1+photo+courtesy+of+Leganes+Municipal+Tourism+Office.JPG" data-desc="Leganes Plaza, central hub of Leganes.">Leganes</li>
+            <li data-img="https://i.ytimg.com/vi/TNxGzDCB8c8/maxresdefault.jpg" data-desc="Leon Plaza, scenic town square.">Leon</li>
+            <li data-img="https://2.bp.blogspot.com/-2cyShcHvhhg/V_MbhJieHoI/AAAAAAAAB9U/6jkBuJK9_igvtqN-4_8rTzHkgAgqsoYhACLcB/s400/Pavia.jpg" data-desc="Pavia Plaza, central municipality plaza.">Pavia</li>
+            <li data-img="https://alchetron.com/cdn/new-lucena-iloilo-cdf6616a-8f6e-48cf-a040-82492ef1f2e-resize-750.jpg" data-desc="New Lucena Plaza, local town center.">New Lucena</li>
+            <li data-img="https://i.ytimg.com/vi/NpT2Par4IAE/maxresdefault.jpg" data-desc="San Miguel Plaza, scenic town plaza.">San Miguel</li>
+            <li data-img="https://i.ytimg.com/vi/JCJUaai8N14/maxresdefault.jpg" data-desc="Santa Barbara Plaza, heritage site and central square.">Santa Barbara</li>
+            <li data-img="https://i.ytimg.com/vi/6p8gXXJzRLg/maxresdefault.jpg" data-desc="Zarraga Plaza, central town hub.">Zarraga</li>
+        </ul>
+        </div>
+    </div>
+
+    <!-- 3rd District -->
+    <div class="card">
+        <img src="third.png" alt="3rd District">
+        <div class="card-content">
+            <h3>3rd District</h3>
+            <ul>
+            <li data-img="https://tse4.mm.bing.net/th/id/OIP.MqvjZx8VZW24A_7tii95hwHaD7?rs=1&pid=ImgDetMain&o=7&rm=3" data-desc="Badiangan Plaza, town center.">Badiangan</li>
+            <li data-img="https://i.ytimg.com/vi/SGOm4a8WpNg/hqdefault.jpg" data-desc="Bingawan Plaza, local heritage site.">Bingawan</li>
+            <li data-img="https://i.ytimg.com/vi/JYkJnQoLwYc/maxresdefault.jpg" data-desc="Cabatuan Plaza, central square of Cabatuan.">Cabatuan</li>
+            <li data-img="https://1.bp.blogspot.com/-rQCgjyAo1Fo/XVa3wH0AvZI/AAAAAAAAH6M/kwPNcjFMkDAQ498GoeV-OaUsS9VURXH3QCLcBGAs/s1600/the%2BRizal%2BShrine%2Bof%2B%2B1929.jpg" data-desc="Calinog Plaza, main town plaza.">Calinog</li>
+            <li data-img="https://i.ytimg.com/vi/Mp8HwxcEwFQ/maxresdefault.jpg" data-desc="Janiuay Plaza, historic plaza area.">Janiuay</li>
+            <li data-img="https://tse1.mm.bing.net/th/id/OIP.pOUo7BKg_8Rf2QXjwFDSNQHaFj?rs=1&pid=ImgDetMain&o=7&rm=3" data-desc="Lambunao Plaza, scenic town plaza.">Lambunao</li>
+            <li data-img="https://i.ytimg.com/vi/RVlRsUQumNE/maxresdefault.jpg" data-desc="Maasin Plaza, central community square.">Maasin</li>
+            <li data-img="https://i.ytimg.com/vi/0_oQNN9Rmnw/hqdefault.jpg" data-desc="Mina Plaza, town plaza and local hub.">Mina</li>
+            <li data-img="https://3.bp.blogspot.com/-9BgEzBHUxoI/V0cdE0Zk68I/AAAAAAAABnk/mQPDr-ICYfcBAxmhhbpFM511MDKcg3evQCLcB/s1600/Pototan%2BPlaza%2BLagoon.jpg" data-desc="Pototan Plaza, lively town center.">Pototan</li>
+        </ul>
+        </div>
+    </div>
+
+    <!-- 4th District -->
+    <div class="card">
+        <img src="fourth.png" alt="4th District">
+        <div class="card-content">
+            <h3>4th District</h3>
+            <ul>
+            <li data-img="https://i.ytimg.com/vi/KHQUzU-t-iA/maxresdefault.jpg" data-desc="Anilao Plaza, heart of Anilao.">Anilao</li>
+            <li data-img="https://i.ytimg.com/vi/zlitgowPhaI/maxresdefault.jpg" data-desc="Banate Plaza, central town square.">Banate</li>
+            <li data-img="https://tse3.mm.bing.net/th/id/OIP.EMnGyJVoV21_cMIob_SfvQHaE6?rs=1&pid=ImgDetMain&o=7&rm=3" data-desc="Barotac Nuevo Plaza, main plaza area.">Barotac Nuevo</li>
+            <li data-img="https://tse3.mm.bing.net/th/id/OIP.EMnGyJVoV21_cMIob_SfvQHaE6?rs=1&pid=ImgDetMain&o=7&rm=3" data-desc="Dingle Plaza, central municipality square.">Dingle</li>
+            <li data-img="https://i.ytimg.com/vi/z084hxlmQPE/hqdefault.jpg" data-desc="Duenas Plaza, town hub.">Duenas</li>
+            <li data-img="https://i.ytimg.com/vi/jJ6nq6weaoc/maxresdefault.jpg" data-desc="Dumangas Plaza, historic town center.">Dumangas</li>
+            <li data-img="https://i.ytimg.com/vi/y4Hs-3Xz1ks/maxresdefault.jpg" data-desc="Passi City Plaza, central town square.">Passi City</li>
+            <li data-img="https://tse3.mm.bing.net/th/id/OIP.pWXlOr2SvXkEiAXzPXzW0QHaDt?rs=1&pid=ImgDetMain&o=7&rm=3" data-desc="San Enrique Plaza, scenic local square.">San Enrique</li>
+        </ul>
+        </div>
+    </div>
+
+    <!-- 5th District -->
+    <div class="card">
+        <img src="fifth.png" alt="5th District">
+        <div class="card-content">
+            <h3>5th District</h3>
+            <ul>
+            <li data-img="https://i.ytimg.com/vi/fXlFdEro9Ck/maxresdefault.jpg" data-desc="Balasan Plaza, central town square.">Balasan</li>
+            <li data-img="https://i.ytimg.com/vi/jLxY7MEbn0w/maxresdefault.jpg" data-desc="Barotac Viejo Plaza, main town hub.">Barotac Viejo</li>
+            <li data-img="https://cdn.audleytravel.com/2272/1623/79/15978475-batad-village.jpg" data-desc="Batad trek, scenic teraces.">Batad</li>
+            <li data-img="data:image/webp;base64,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" data-desc="Carles Plaza, near coastal area.">Carles</li>
+            <li data-img="https://tse2.mm.bing.net/th/id/OIP.rF8o3WBRWIV36jVWCPErpgHaE9?rs=1&pid=ImgDetMain&o=7&rm=3" data-desc="Concepcion Plaza, central town square.">Concepcion</li>
+            <li data-img="https://tse4.mm.bing.net/th/id/OIP.FIUkpMjFteKLOkG086_cwgHaHa?rs=1&pid=ImgDetMain&o=7&rm=3" data-desc="Estancia Plaza, historic coastal town.">Estancia</li>
+            <li data-img="https://tse2.mm.bing.net/th/id/OIP.aSd7zajfAobEv8_VAQ9d2gHaEU?rs=1&pid=ImgDetMain&o=7&rm=3" data-desc="Lemery Plaza, local town hub.">Lemery</li>
+            <li data-img="https://tse4.mm.bing.net/th/id/OIP.2BTECEFeT7fMQ0QKJiuFjgHaEK?rs=1&pid=ImgDetMain&o=7&rm=3" data-desc="San Dionisio Plaza, central plaza.">San Dionisio</li>
+            <li data-img="https://i.ytimg.com/vi/bVWezser4wg/hqdefault.jpg" data-desc="San Rafael Plaza, town square and community hub.">San Rafael</li>
+        </ul>
+        </div>
+    </div>
+
+</section>
+
+<!-- Modal -->
+<div class="modal" id="modal">
+    <div class="modal-content">
+        <span class="close-btn" id="closeModal">&times;</span>
+        <h3 id="modalTitle"></h3>
+        <img id="modalImg" src="" alt="">
+        <p id="modalDesc"></p>
+    </div>
+</div>
+
+<footer>
+    <p>© 2026 Iloilo Tourism | School Project</p>
+</footer>
+
+<script>
+// Search filter with highlight and hide non-matching items
+const searchInput = document.getElementById("searchInput");
+searchInput.addEventListener("input", function() {
+    const filter = searchInput.value.toLowerCase();
+    const cards = document.querySelectorAll("#districtCards .card");
+
+    cards.forEach(card => {
+        const lis = card.querySelectorAll("li");
+        let anyVisible = false;
+
+        lis.forEach(li => {
+            if(li.textContent.toLowerCase().includes(filter)) {
+                li.style.display = "list-item"; // show matching
+                li.classList.add("highlight");
+                anyVisible = true;
+            } else {
+                li.style.display = "none"; // hide non-matching
+                li.classList.remove("highlight");
+            }
+        });
+
+        // Hide entire district card if no municipalities match
+        card.style.display = anyVisible ? "block" : "none";
+    });
+});
+
+// Modal functionality
+const modal = document.getElementById("modal");
+const modalTitle = document.getElementById("modalTitle");
+const modalImg = document.getElementById("modalImg");
+const modalDesc = document.getElementById("modalDesc");
+const closeModal = document.getElementById("closeModal");
+
+document.querySelectorAll("#districtCards li").forEach(li => {
+    li.addEventListener("click", () => {
+        modal.style.display = "flex";
+        modalTitle.textContent = li.textContent;
+        modalImg.src = li.dataset.img;
+        modalDesc.textContent = li.dataset.desc;
+    });
+});
+
+closeModal.addEventListener("click", () => modal.style.display = "none");
+window.addEventListener("click", e => { if(e.target === modal) modal.style.display="none"; });
+</script>
+
+
+</body>
+</html>
